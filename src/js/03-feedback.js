@@ -28,10 +28,19 @@ window.addEventListener("DOMContentLoaded", loadFormState);
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  localStorage.removeItem("feedback-form-state");
-  emailInput.value = "";
-  messageInput.value = "";
+  if (emailInput.value && messageInput.value) {
+    const userInput = {
+      email: emailInput.value,
+      message: messageInput.value,
+    };
 
-  console.log("Email:", emailInput.value);
-  console.log("Message:", messageInput.value);
+    localStorage.removeItem("feedback-form-state");
+    emailInput.value = "";
+    messageInput.value = "";
+
+    console.log("User Input:", userInput);
+  } else {
+    console.log("Error: Please fill both fields.");
+  }
 });
+
