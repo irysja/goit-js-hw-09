@@ -10,11 +10,13 @@ function changeBackgroundColor() {
 
 function startColorChange() {
   startButton.disabled = true; // Disable the "Start" button
+  stopButton.disabled = false; // Enable the "Stop" button
   intervalId = setInterval(changeBackgroundColor, 1000);
 }
 
 function stopColorChange() {
   startButton.disabled = false; // Enable the "Start" button
+  stopButton.disabled = true; // Disable the "Stop" button
   clearInterval(intervalId);
 }
 

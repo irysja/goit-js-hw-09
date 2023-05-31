@@ -23,6 +23,11 @@ form.addEventListener('submit', function (event) {
         console.log(`❌ Rejected promise ${position} in ${delay}ms`);
       });
   }
+
+  // Clear the form inputs
+  delayInput.value = '';
+  stepInput.value = '';
+  amountInput.value = '';
 });
 
 function createPromise(position, delay) {
@@ -38,4 +43,3 @@ function createPromise(position, delay) {
     }, delay);
   });
 }
-
